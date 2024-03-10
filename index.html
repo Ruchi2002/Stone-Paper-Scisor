@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- link tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- link css -->
+    <link rel="stylesheet" href="./style.css " />
+
+    <title>Rock, Paper, Scissors</title>
+  </head>
+  <body class="text-white">
+    <header
+      class="flex justify-around items-center border-2 border-cyan-700 w-2/4 m-auto rounded-xl"
+    >
+      <div class="flex flex-col">
+        <!-- Rock paper scisor content -->
+        <span class="text-3xl">Rock</span>
+        <span class="text-3xl">paper</span>
+        <span class="text-3xl">Scissor</span>
+      </div>
+      <div
+        class="bg-white text-black p-[25px] flex flex-col justify-around items-center m-[10px]"
+      >
+        <span class="text-2xl">Score</span>
+        <span id="Score" class="text-6xl">0</span>
+      </div>
+    </header>
+    <main>
+      <section id="step-1">
+        <div class="flex items-center justify-center mt-32 relative">
+          <img src="./images/bg-triangle.svg" alt="" />
+
+          <img
+            id="paper"
+            class="bg-white p-10 rounded-[50%] border-[16px] border-blue-600 absolute top-[-25%] left-[35%] input_move"
+            src="./images/icon-paper.svg"
+            alt=""
+          />
+
+          <img
+            id="rock"
+            class="bg-white p-10 rounded-[50%] border-[16px] border-red-600 absolute bottom-[-20%] input_move"
+            src="./images/icon-rock.svg"
+            alt=""
+          />
+
+          <img
+            id="scissors"
+            class="bg-white p-10 rounded-[50%] border-[16px] border-yellow-600 absolute top-[-25%] right-[35%] input_move"
+            src="./images/icon-scissors.svg"
+            alt=""
+          />
+        </div>
+
+        <button
+          class="rules px-[15px] py-[4px] border-2 rounded font-bold"
+          onclick="showModal()"
+        >
+          RULES
+        </button>
+        <div class="overlay"></div>
+        <div class="rules-img">
+          <img src="./images/image-rules.svg" alt="" />
+          <span class="closeBtn" onclick="closeModal()">&times;</span>
+        </div>
+      </section>
+      <section id="step-2" class="hidden">
+        <div class="flex w-full m-auto justify-between mt-10">
+          <div class="flex flex-col items-center gap-20 w-1/2">
+            <p class="text-2xl">You picked</p>
+            <div
+              class="user_choice relative w-[200px] h-[200px] bg-gray-800 rounded-[50%] flex items-center justify-center"
+            ></div>
+          </div>
+          <div class="flex flex-col items-center gap-20 w-1/2">
+            <p class="computer_head text-2xl">Computer</p>
+            <div
+              class="computer_choice relative w-[200px] h-[200px] bg-gray-800 rounded-[50%] flex items-center justify-center"
+            ></div>
+          </div>
+        </div>
+        <div
+          id="result"
+          class="text-3xl flex items-center justify-center"
+        ></div>
+        <button
+          id="play_again"
+          class="text-2xl px-[40px] py-[8px] ml-[45%] mt-[100px] border-2 rounded font-bold"
+        >
+          PLAY AGAIN
+        </button>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
